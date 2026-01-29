@@ -1,4 +1,8 @@
-export default function Home() {
+"use client";
+
+import Link from "next/link";
+
+export default function PortfolioArtPage() {
   return (
     <div className="min-h-screen flex flex-col text-zinc-800">
       <div className="flex flex-1">
@@ -11,8 +15,8 @@ export default function Home() {
           </div>
           <div className="flex flex-col items-center gap-6 pb-8 text-zinc-400">
             {/* Home icon */}
-            <button
-              type="button"
+            <Link
+              href="/"
               className="hover:text-zinc-900 transition-colors"
               aria-label="Foyer"
             >
@@ -30,10 +34,10 @@ export default function Home() {
                   d="M3.75 9.75L12 3l8.25 6.75M5.25 10.5V19.5A1.5 1.5 0 006.75 21h10.5a1.5 1.5 0 001.5-1.5V10.5"
                 />
               </svg>
-            </button>
+            </Link>
             {/* Grid icon */}
-            <button
-              type="button"
+            <Link
+              href="/rooms"
               className="hover:text-zinc-900 transition-colors"
               aria-label="Rooms"
             >
@@ -50,10 +54,10 @@ export default function Home() {
                 <rect x="4" y="14" width="6" height="6" rx="1" />
                 <rect x="14" y="14" width="6" height="6" rx="1" />
               </svg>
-            </button>
+            </Link>
             {/* Info icon */}
-            <button
-              type="button"
+            <Link
+              href="/about"
               className="hover:text-zinc-900 transition-colors"
               aria-label="Info"
             >
@@ -72,7 +76,7 @@ export default function Home() {
                   d="M11.25 10.5H12v5.25m-.75-7.5a.75.75 0 111.5 0 .75.75 0 01-1.5 0z"
                 />
               </svg>
-            </button>
+            </Link>
           </div>
         </aside>
 
@@ -89,13 +93,13 @@ export default function Home() {
               <span className="text-zinc-400">•</span>
               <span>Foyer</span>
             </div>
-            <button
-              type="button"
-              className="flex items-center gap-2 text-[10px] tracking-[0.22em] text-zinc-400 hover:text-zinc-700 transition-colors"
+            <Link
+              href="https://leosiu.dev"
+              className="flex items-center gap-2 text-[10px] tracking-[0.22em] text-zinc-400 hover:text-zinc-700 transition-colors cursor-pointer"
             >
               <span className="text-xs">←</span>
               <span>Return to portfolio</span>
-            </button>
+            </Link>
           </header>
 
           {/* Foyer panel */}
@@ -113,8 +117,9 @@ export default function Home() {
                       <span className="italic text-zinc-500">in progress.</span>
                     </h1>
                     <p className="text-sm md:text-base text-zinc-500 max-w-md leading-relaxed">
-                      A small, intentional museum of photography and ceramics—
-                      opening soon.
+                      A small, intentional museum of photography and ceramics.
+                      <br />
+                      opening soon
                     </p>
                   </div>
 
@@ -126,15 +131,16 @@ export default function Home() {
                     <div className="border border-zinc-200/80 rounded-xl overflow-hidden bg-zinc-50/70">
                       <div className="grid grid-cols-2 sm:grid-cols-5 divide-x divide-zinc-200/80">
                         {[
-                          { id: "01", label: "Street" },
-                          { id: "02", label: "Objects" },
-                          { id: "03", label: "Light" },
-                          { id: "04", label: "Ceramics" },
-                          { id: "05", label: "Cats" },
+                          { id: "01", label: "Street", href: "/rooms/street" },
+                          { id: "02", label: "Objects", href: "/rooms/objects" },
+                          { id: "03", label: "Light", href: "/rooms/light" },
+                          { id: "04", label: "Ceramics", href: "/rooms/ceramics" },
+                          { id: "05", label: "Cats", href: "/rooms/cats" },
                         ].map((room) => (
-                          <div
+                          <Link
                             key={room.id}
-                            className="px-4 py-4 sm:py-5 flex flex-col justify-between h-full"
+                            href={room.href}
+                            className="px-4 py-4 sm:py-5 flex flex-col justify-between h-full hover:bg-zinc-100/60 transition-colors"
                           >
                             <span className="text-[10px] tracking-[0.25em] text-zinc-400 uppercase">
                               {room.id}
@@ -142,19 +148,19 @@ export default function Home() {
                             <span className="mt-6 text-[11px] tracking-[0.22em] uppercase text-zinc-700">
                               {room.label}
                             </span>
-                          </div>
+                          </Link>
                         ))}
                       </div>
                     </div>
                   </div>
 
                   {/* Opening notes button */}
-                  <button
-                    type="button"
+                  <Link
+                    href="/notes"
                     className="inline-flex items-center justify-center border border-zinc-300 px-5 py-2 text-[11px] tracking-[0.24em] uppercase text-zinc-600 bg-white/80 hover:bg-zinc-50 transition-colors rounded-sm"
                   >
                     Opening notes
-                  </button>
+                  </Link>
                 </div>
 
                 {/* Right column: artwork previews */}
@@ -189,35 +195,26 @@ export default function Home() {
 
               {/* Card footer */}
               <div className="border-t border-zinc-200/80 px-8 md:px-12 py-4 flex flex-col sm:flex-row items-start sm:items-center justify-between gap-4 text-[11px] tracking-[0.22em] uppercase text-zinc-400">
-                <span>© {new Date().getFullYear()} Leo Chen — All rights reserved</span>
+                <span>© {new Date().getFullYear()} Leonardo Siu — All rights reserved</span>
                 <div className="flex gap-6">
-                  <button
-                    type="button"
+                  <Link
+                    href="https://www.instagram.com"
                     className="hover:text-zinc-700 transition-colors"
                   >
                     Instagram
-                  </button>
-                  <button
-                    type="button"
+                  </Link>
+                  <Link
+                    href="mailto:leonardo.siu.dev@gmail.com"
                     className="hover:text-zinc-700 transition-colors"
                   >
                     Email
-                  </button>
+                  </Link>
                 </div>
               </div>
             </div>
           </section>
         </main>
       </div>
-
-      {/* Bottom-right circular control */}
-      <button
-        type="button"
-        aria-label="Toggle ambiance"
-        className="fixed right-6 bottom-6 h-10 w-10 rounded-full border border-white/80 bg-white/90 shadow-[0_12px_30px_rgba(15,23,42,0.18)] flex items-center justify-center text-xs text-zinc-400 hover:text-zinc-700 hover:bg-slate-50 transition-colors"
-      >
-        ◑
-      </button>
     </div>
   );
 }
