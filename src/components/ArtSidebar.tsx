@@ -71,9 +71,12 @@ const iconMap = {
 
 export default function ArtSidebar() {
   return (
-    <aside className="hidden md:flex flex-col justify-between items-center w-16 border-r border-zinc-200/70 bg-white/70 backdrop-blur-md">
+    <aside className="hidden md:flex flex-col justify-between items-center w-20 bg-background backdrop-blur-md">
+      {/* Vertical divider */}
+      <div className="absolute right-0 top-0 bottom-0 w-px bg-gray-300" />
+
       <div className="pt-10">
-        <div className="writing-vertical-rl text-[10px] uppercase tracking-[0.25em] text-zinc-400">
+        <div className="writing-vertical-rl text-sm font-bold uppercase tracking-wider text-foreground">
           Art Portfolio // Foyer
         </div>
       </div>
