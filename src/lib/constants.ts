@@ -1,3 +1,5 @@
+export const HOME_PREVIEW_ONLY = true;
+
 export const ROOMS = [
   { id: "01", label: "Street", href: "/rooms/street" },
   { id: "02", label: "Objects", href: "/rooms/objects" },

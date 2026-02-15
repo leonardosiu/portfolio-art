@@ -1,7 +1,7 @@
 import Link from "next/link";
 
 const CURRENT_YEAR = new Date().getFullYear();
-const INSTAGRAM_URL = "https://www.instagram.com";
+const INSTAGRAM_URL = "https://www.instagram.com/artby.leos/";
 const EMAIL = "leonardo.siu.dev@gmail.com";
 
 export default function ArtFooter() {

@@ -13,7 +13,7 @@ export default function ArtworkFrameSquare({
 }: ArtworkFrameSquareProps) {
   return (
     <div className="flex-1 flex flex-col gap-3">
-      <div className="aspect-square rounded-3xl bg-zinc-50 border border-zinc-200 flex items-center justify-center overflow-hidden">
+      <div className="aspect-square rounded-3xl bg-zinc-50 border border-8 border-zinc-200 flex items-center justify-center overflow-hidden">
         {children}
       </div>
       <p className="text-[11px] leading-relaxed text-zinc-500 tracking-[0.18em] uppercase">

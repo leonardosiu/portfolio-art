@@ -6,8 +6,8 @@ export default function ArtHeader() {
   return (
     <header className="flex items-center justify-between px-6 md:px-10 py-6 text-[11px] tracking-[0.24em] uppercase text-zinc-500">
       <div className="flex items-center gap-4">
-        <span className="font-semibold text-zinc-800 tracking-[0.28em]">
-          art.leo.dev
+        <span className="font-semibold lowercase text-zinc-800 tracking-[0.28em]">
+          art.leosiu.dev
         </span>
         <span className="h-px w-6 bg-zinc-300" />
         <span>WIP</span>

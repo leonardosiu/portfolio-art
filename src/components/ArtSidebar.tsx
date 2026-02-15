@@ -1,10 +1,15 @@
 import Link from "next/link";
+import { HOME_PREVIEW_ONLY } from "@/lib/constants";
 
 const navItems = [
   { href: "/", label: "Foyer", icon: "home" },
   { href: "/rooms", label: "Rooms", icon: "grid" },
   { href: "/about", label: "Info", icon: "info" },
 ] as const;
+
+const visibleNavItems = HOME_PREVIEW_ONLY
+  ? navItems.filter((item) => item.href === "/")
+  : navItems;
 
 function HomeIcon({ className }: { className?: string }) {
   return (
@@ -81,7 +86,7 @@ export default function ArtSidebar() {
         </div>
       </div>
       <div className="flex flex-col items-center gap-6 pb-8 text-zinc-400">
-        {navItems.map(({ href, label, icon }) => {
+        {visibleNavItems.map(({ href, label, icon }) => {
           const Icon = iconMap[icon];
           return (
             <Link
