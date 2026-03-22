@@ -13,7 +13,7 @@ import { HOME_PREVIEW_ONLY } from "@/lib/constants";
 
 export default function PortfolioArtPage() {
   return (
-    <div className="min-h-screen flex flex-col text-zinc-800">
+    <div className="min-h-screen flex flex-col text-text-light bg-background-light">
       <div className="flex flex-1">
         <ArtSidebar />
 
@@ -21,7 +21,7 @@ export default function PortfolioArtPage() {
           <ArtHeader />
 
           <section className="flex-1 flex flex-col px-6 md:px-10 pb-10">
-            <div className="flex-1 rounded-3xl bg-white/85 border border-white/70 shadow-[0_30px_80px_rgba(15,23,42,0.18)] overflow-hidden flex flex-col">
+            <div className="flex-1 rounded-3xl bg-card border border-border shadow-sm overflow-hidden flex flex-col">
               <div className="flex flex-1 flex-col lg:flex-row gap-10 lg:gap-16 px-8 md:px-12 pt-10 pb-12">
                 <div className="flex-1 max-w-xl space-y-10">
                   <FoyerHero />
@@ -29,7 +29,7 @@ export default function PortfolioArtPage() {
                   {!HOME_PREVIEW_ONLY && (
                     <Link
                       href="/notes"
-                      className="inline-flex items-center justify-center border border-zinc-300 px-5 py-2 text-[11px] tracking-[0.24em] uppercase text-zinc-600 bg-white/80 hover:bg-zinc-50 transition-colors rounded-sm"
+                      className="inline-flex items-center justify-center border border-border px-5 py-2 text-[11px] tracking-[0.24em] uppercase text-muted-light bg-card/80 hover:bg-muted transition-colors rounded-sm"
                     >
                       Opening notes
                     </Link>

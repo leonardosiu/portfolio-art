@@ -76,7 +76,7 @@ const iconMap = {
 
 export default function ArtSidebar() {
   return (
-    <aside className="hidden md:flex flex-col justify-between items-center w-20 bg-background backdrop-blur-md">
+    <aside className="hidden md:flex flex-col justify-between items-center w-20 bg-background">
       {/* Vertical divider */}
       <div className="absolute right-0 top-0 bottom-0 w-px bg-gray-300" />
 
@@ -85,14 +85,14 @@ export default function ArtSidebar() {
           Art Portfolio // Foyer
         </div>
       </div>
-      <div className="flex flex-col items-center gap-6 pb-8 text-zinc-400">
+      <div className="flex flex-col items-center gap-6 pb-8 text-muted-light dark:text-muted-dark">
         {visibleNavItems.map(({ href, label, icon }) => {
           const Icon = iconMap[icon];
           return (
             <Link
               key={href}
               href={href}
-              className="hover:text-zinc-900 transition-colors"
+              className="hover:text-foreground transition-colors"
               aria-label={label}
             >
               <Icon className="h-5 w-5" />
