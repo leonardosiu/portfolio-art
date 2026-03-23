@@ -1,6 +1,7 @@
 import type { Metadata } from "next";
 import { Space_Grotesk, Cascadia_Code, Playfair_Display } from "next/font/google";
 import "./globals.css";
+import { Analytics } from "@vercel/analytics/next";
 
 const spaceGrotesk = Space_Grotesk({
   variable: "--font-primary",
@@ -36,6 +37,7 @@ export default function RootLayout({
         className={`${spaceGrotesk.variable} ${cascadiaCode.variable} ${playfairDisplay.variable} antialiased`}
       >
         {children}
+        <Analytics />
       </body>
     </html>
   );
